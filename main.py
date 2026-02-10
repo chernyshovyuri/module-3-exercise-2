@@ -12,6 +12,11 @@ class Size:
         self.__horizont = horizont
         self.__vertic = vertic
 
+    def __str__(self):
+        return f"Horizont: {self.__horizont}, Vertical: {self.__vertic}"
+
+    def __repr__(self):
+        return f"H: Horizont: {self.__horizont}, Vertical: {self.__vertic}"
 
     def __get_horizont(self):
         return self.__horizont
@@ -49,6 +54,13 @@ class TopLeftCorner:
     def __init__(self,x: int, y: int):
         self.__x = x
         self.__y = y
+
+    def __str__(self):
+        return f"x corner: {self.__x}, y corner: {self.__y}"
+
+    def __repr__(self):
+        return f"x corner: {self.__x}, y corner: {self.__y}"
+
 
     def __get_x(self):
         return self.__x
@@ -111,7 +123,7 @@ class ModelWindow:
         return self.__color
 
     def __str__(self):
-        return f'Name: {self.__name}\nCoordinates: {self.__coordinates}\nSize: {self.__size}'
+        return f'Name: {self.__name}\nCoordinates: {self.__coordinates}\nSize: {self.__size}\nColor: {self.__color}\nViewport: {self.__is_viewport}\nFrame: {self.__is_frame}'
 
 
     def active(self):
@@ -149,7 +161,28 @@ class ModelWindow:
 
 
 
+size = Size(5, 5)
+print('='* 20)
+print(size)
+print('='* 20)
+coordinates = TopLeftCorner(0, 0)
+print(coordinates)
+print('='* 20)
 
+
+window = ModelWindow('Окошечко', coordinates, size, 'red', True, True)
+
+window.status()
+window.set_color('blue')
+
+size.horizont = 10
+size.vertic = 20
+
+window.get_size()
+
+
+print(window)
+print('='* 20)
 
 
 
