@@ -24,17 +24,17 @@ class Size:
     def __get_vertic(self):
         return self.__vertic
 
-    def __set_horizont(self, new_horizont: float) -> float | bool:
+    def __set_horizont(self, new_horizont: float):
 
-        if new_horizont < 0 or new_horizont > 1960 or new_horizont is None:  return False
+        if new_horizont < 0 or new_horizont > 1960 or new_horizont is None:   raise ValueError()
 
         self.__horizont = new_horizont
 
         return True
 
-    def __set_vertic(self, new_vertic: float) -> float | bool:
+    def __set_vertic(self, new_vertic: float):
 
-        if new_vertic < 0 or new_vertic > 1080 or new_vertic is None:  return False
+        if new_vertic < 0 or new_vertic > 1080 or new_vertic is None:  raise ValueError()
 
         self.__vertic = new_vertic
 
